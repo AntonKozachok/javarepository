@@ -2,7 +2,6 @@ package lesson05;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 
 public class MyArrayListClass {
     public static void main(String[] args) {
@@ -18,12 +17,15 @@ public class MyArrayListClass {
         if (!carBrands.contains("Ferrari"))
         System.out.println("No Ferrari in the list"+carBrands);
 
-        Iterator<String> iterator = carBrands.iterator();
-        while (iterator.hasNext()) {
-            System.out.println("unsorted list:"+ iterator.next());
+        System.out.println("unsorted list:");
+        for (String carBrand : carBrands) {
+            System.out.println("-"+carBrand);
         }
 
         Collections.sort(carBrands);
-        while (iterator.hasNext()) System.out.println("sorted list" + iterator.next());
+        System.out.println("sorted list");
+        for (String brand:carBrands) {
+            System.out.println("-"+brand);
+        }
     }
 }
